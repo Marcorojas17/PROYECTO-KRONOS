@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════════════════════════════════
-# CRONOS · Workflow de pruebas · v1.0
-# Valida HTML, CSS y JS + verifica enlaces internos
+# CRONOS · Workflow de pruebas · v1.1
+# Valida HTML, CSS, JS + ejecuta tests + verifica enlaces internos
 # ═══════════════════════════════════════════════════════════════════════════
 
 name: Tests
@@ -50,7 +50,25 @@ jobs:
         run: |
           echo "═══ Validando JavaScript ═══"
           node --check app.js
-          echo "✓ Sintaxis JS correcta"
+          echo "✓ Sintaxis JS del sitio correcta"
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validar sintaxis de todos los módulos src/
+        run: |
+          echo "═══ Validando módulos src/ ═══"
+          find src -name "*.js" -type f | while read file; do
+            node --check "$file"
+            echo "✓ $file"
+          done
+
+      - name: Ejecutar tests del proyecto
+        run: |
+          echo "═══ Ejecutando tests ═══"
+          npm test
 
       - name: Verificar enlaces internos del index
         run: |
@@ -88,7 +106,9 @@ jobs:
           echo "  ✓ Archivos esenciales presentes"
           echo "  ✓ HTML validado"
           echo "  ✓ CSS validado"
-          echo "  ✓ JS con sintaxis correcta"
+          echo "  ✓ JS del sitio correcto"
+          echo "  ✓ Módulos src/ con sintaxis válida"
+          echo "  ✓ Tests unitarios, integración y seguridad"
           echo "  ✓ Enlaces internos verificados"
           echo "  ✓ Estructura del repositorio coherente"
           echo "═══════════════════════════════════════════════════"
