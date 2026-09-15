@@ -164,3 +164,22 @@ Tradición         pitagórica
 Reducción         5
 
 No predice. Solo organiza significado simbólico.
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   ✓  Head completo (SEO, Open Graph, Twitter Card, favicon, manifest)   ║
+║   ✓  Menú con 10 enlaces (incluye #tiempo)                              ║
+║   ✓  01 Visión                                                          ║
+║   ✓  02 Arquitectura (5 capas)                                          ║
+║   ✓  03 Tercera capa                                                    ║
+║   ✓  04 Repertorio (árbol actualizado con timelines)                    ║
+║   ✓  05 Módulos (incluye core/timelines)                                ║
+║   ✓  06 Ética                                                           ║
+║   ✓  07 Laboratorio (formulario funcional)                              ║
+║   ✓  08 Tiempo (línea temporal con filtros)     ← NUEVO                 ║
+║   ✓  09 Glosario                                                        ║
+║   ✓  10 Legal                                                           ║
+║   ✓  Footer con enlaces y año dinámico                                  ║
+║   ✓  Script type="module" para cargar los motores reales                ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
