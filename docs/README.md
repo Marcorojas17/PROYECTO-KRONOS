@@ -1,5 +1,5 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- CRONOS · Documentación fundacional · v1.0                              -->
+<!-- CRONOS · Documentación fundacional · v1.1                              -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -16,8 +16,9 @@
 ║ ▓   ╚═════╝  ╚═════╝  ╚═════╝╚══════╝                                     ▓ ║
 ║ ▓                                                                          ▓ ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
-║ ▓   V I S I Ó N   ·   A R Q U I T E C T U R A   ·   É T I C A              ▓ ║
+║ ▓   V I S I Ó N   ·   A R Q U I T E C T U R A   ·   É T I C A              ║
 ║ ▓   G L O S A R I O   ·   T E R C E R A   C A P A                        ║
+║ ▓   v 1 . 1   ·   2 0 2 6 - 0 9 - 1 5                                      ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
 ║ ▓                                                                          ▓ ║
 ║ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ║
@@ -60,13 +61,25 @@
 
 ---
 
+## 🧭 Relación con `src/`
+
+La documentación describe **qué** hace el proyecto. El código en [`../src/`](../src/) describe **cómo** lo hace. Los documentos clave para entender la implementación son:
+
+| Documento | Se relaciona con |
+|-----------|------------------|
+| `architecture.md` | Capas II (lógica) y III (computacional) — implementadas en `src/core/` y `src/*_engine/` |
+| `glossary.md` | Nombres de funciones, entidades y motores |
+| `ethics.md` | Validaciones y límites del código (sin predicciones, sin claims cuánticos) |
+
+---
+
 ## ⚠️ Regla de separación
 
 Toda la documentación de esta carpeta distingue explícitamente entre:
 
 | Símbolo | Significado | Ejemplos |
 |---------|-------------|----------|
-| ✅ | **Real** | Arquitectura del sitio, tecnologías, protocolo de publicación |
+| ✅ | **Real** | Arquitectura del sitio, código funcional, tests, protocolo de publicación |
 | 🎭 | **Conceptual** | Capas simbólicas, astrología, numerología, "tercera capa" |
 
 Ninguna sección presenta lo simbólico como ciencia comprobada.
@@ -78,7 +91,7 @@ Ninguna sección presenta lo simbólico como ciencia comprobada.
 ```text
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║   DOCS · CRONOS · v1.0 · 2026-09-15                                          ║
+║   DOCS · CRONOS · v1.1 · 2026-09-15                                          ║
 ║   Documentación fundacional                                                  ║
 ║   Cultura, no ciencia · Narrativa, no predicción                             ║
 ║                                                                              ║
