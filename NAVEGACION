@@ -39,3 +39,47 @@
 ║     └─ Resumen de seguridad                                              ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   New issue                                                              ║
+║   ─────────────────────────────────────────────────────────────          ║
+║                                                                          ║
+║   🐛 Reporte de error                                                    ║
+║      Reporta un problema reproducible en el sitio o el repositorio       ║
+║                                                    [ Get started ]       ║
+║                                                                          ║
+║   ✨ Solicitud de mejora                                                 ║
+║      Propón una nueva funcionalidad, sección o mejora para CRONOS        ║
+║                                                    [ Get started ]       ║
+║                                                                          ║
+║   ─────────────────────────────────────────────────────────────          ║
+║                                                                          ║
+║   📖 Leer la visión del proyecto                                         ║
+║   ⚖️ Leer principios éticos                                              ║
+║   📚 Guía de contribución                                                ║
+║   🔒 Reportar una vulnerabilidad                                         ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+PROYECTO-KRONOS/
+├── index.html, styles.css, app.js         ✅ sitio con 8 secciones
+├── README.md, LICENSE, CHANGELOG.md       ✅ hacker
+├── CONTRIBUTING.md                        ✅ hacker
+├── SECURITY.md                            ✅ hacker
+│
+├── docs/                                  ✅ 6 archivos hacker
+├── data/                                  ✅ 6 archivos hacker
+├── src/                                   ✅ README hacker
+├── tests/                                 ✅ README hacker
+│
+└── .github/
+    ├── README.md                          ✅ hacker
+    ├── PULL_REQUEST_TEMPLATE.md           ✅ NUEVO
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.md                  ✅ NUEVO
+    │   ├── feature_request.md             ✅ NUEVO
+    │   └── config.yml                     ✅ NUEVO
+    └── workflows/
+        ├── tests.yml                      ✅ activo
+        └── security.yml                   ✅ activo
