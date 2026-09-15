@@ -215,3 +215,68 @@ console.log(
   'color:#c9a44c;font-size:16px;letter-spacing:4px;font-weight:bold;',
   'color:#9a97ab;font-size:11px;'
 );
+// ---------- Línea temporal ----------
+const tlTrack = document.getElementById('tl-track');
+const tlFilters = document.getElementById('tl-filters');
+
+if (tlTrack && tlFilters) {
+  // Construir la línea temporal con la clase real del proyecto
+  const timeline = new Cronos.timeline.Timeline(
+    'Historia del Proyecto CRONOS',
+    'Documentación cronológica del repositorio'
+  );
+
+  const eventosDemo = [
+    { id: 'e1', iso: '2026-09-15', label: 'Concepción del proyecto',              tags: ['fundacional'] },
+    { id: 'e2', iso: '2026-09-15', label: 'Documentación fundacional completa',   tags: ['fundacional'] },
+    { id: 'e3', iso: '2026-09-15', label: 'Corpus simbólico poblado',             tags: ['fundacional'] },
+    { id: 'e4', iso: '2026-09-15', label: 'Núcleo y motores implementados',       tags: ['código'] },
+    { id: 'e5', iso: '2026-09-15', label: '40 tests activos',                     tags: ['código'] },
+    { id: 'e6', iso: '2026-09-15', label: 'Capa de tiempo implementada',          tags: ['código'] },
+    { id: 'e7', iso: '2026-09-15', label: 'Sitio publicado en GitHub Pages',      tags: ['sitio'] },
+    { id: 'e8', iso: '2026-09-15', label: 'Laboratorio interactivo',              tags: ['sitio'] },
+    { id: 'e9', iso: '2026-09-15', label: 'SEO y presentación',                   tags: ['sitio'] },
+    { id: 'e10', iso: '2026-09-15', label: 'CodeQL + Push protection',            tags: ['seguridad'] },
+    { id: 'e11', iso: '2026-09-15', label: 'Plantillas de Issues y PR',           tags: ['seguridad', 'fundacional'] }
+  ];
+
+  for (const e of eventosDemo) timeline.add(e);
+
+  /**
+   * Renderiza la línea temporal filtrada por etiqueta.
+   * @param {string} tag - '*' para mostrar todos
+   */
+  function renderTimeline(tag) {
+    const events = tag === '*' ? timeline.sorted() : timeline.byTag(tag);
+
+    if (events.length === 0) {
+      tlTrack.innerHTML = '<p class="timeline__empty">Sin eventos en esta categoría.</p>';
+      return;
+    }
+
+    tlTrack.innerHTML = events.map(e => `
+      <article class="timeline__event">
+        <div class="timeline__event-date">${escapeHtml(e.iso)}</div>
+        <h3 class="timeline__event-label">${escapeHtml(e.label)}</h3>
+        <div class="timeline__event-tags">
+          ${e.tags.map(t => `<span class="timeline__tag">${escapeHtml(t)}</span>`).join('')}
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // Render inicial
+  renderTimeline('*');
+
+  // Manejar filtros
+  tlFilters.addEventListener('click', event => {
+    const button = event.target.closest('.timeline__filter');
+    if (!button) return;
+
+    tlFilters.querySelectorAll('.timeline__filter').forEach(b =>
+      b.classList.remove('is-active')
+    );
+    button.classList.add('is-active');
+    renderTimeline(button.dataset.tag || '*');
+  });
+}
