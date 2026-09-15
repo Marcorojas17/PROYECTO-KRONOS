@@ -1,29 +1,3 @@
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- CRONOS · Sistema de Interpretación Temporal y Simbólica · v1.0         -->
-<!-- Arquitectura filosófica y tecnológica · Sitio estático GitHub Pages    -->
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-```text
-╔══════════════════════════════════════════════════════════════════════════════╗
-║ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ║
-║ ▓                                                                          ▓ ║
-║ ▓    ██████╗██████╗  ██████╗ ███╗   ██╗ ██████╗ ███████╗                  ▓ ║
-║ ▓   ██╔════╝██╔══██╗██╔═══██╗████╗  ██║██╔═══██╗██╔════╝                  ▓ ║
-║ ▓   ██║     ██████╔╝██║   ██║██╔██╗ ██║██║   ██║███████╗                  ▓ ║
-║ ▓   ██║     ██╔══██╗██║   ██║██║╚██╗██║██║   ██║╚════██║                  ▓ ║
-║ ▓   ╚██████╗██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝███████║                  ▓ ║
-║ ▓    ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝                  ▓ ║
-║ ▓                                                                          ▓ ║
-║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
-║ ▓   S I S T E M A   D E   I N T E R P R E T A C I Ó N   T E M P O R A L    ▓ ║
-║ ▓   Y   S I M B Ó L I C A   ·   v 1 . 0                                    ▓ ║
-║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
-║ ▓                                                                          ▓ ║
-║ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-
 # CRONOS — Sistema de Interpretación Temporal y Simbólica
 
 > **Cognitive Relational Ontology for Networked Observations and Systems**
@@ -32,11 +6,12 @@
 
 **Sitio publicado:** https://marcorojas17.github.io/PROYECTO-KRONOS/
 
-![CRONOS](https://img.shields.io/badge/CRONOS-v1.0-c9a44c?style=for-the-badge&labelColor=0a0a0f)
+![CRONOS](https://img.shields.io/badge/CRONOS-v1.1-c9a44c?style=for-the-badge&labelColor=0a0a0f)
 ![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-6a5acd?style=for-the-badge&labelColor=0a0a0f)
 ![HTML5](https://img.shields.io/badge/HTML-5-c9a44c?style=for-the-badge&labelColor=0a0a0f)
 ![CSS3](https://img.shields.io/badge/CSS-3-6a5acd?style=for-the-badge&labelColor=0a0a0f)
 ![JS](https://img.shields.io/badge/JS-Vanilla-c9a44c?style=for-the-badge&labelColor=0a0a0f)
+![Tests](https://img.shields.io/badge/tests-27%20passing-00ff41?style=for-the-badge&labelColor=0a0a0f)
 ![MIT](https://img.shields.io/badge/license-MIT-6a5acd?style=for-the-badge&labelColor=0a0a0f)
 
 </div>
@@ -49,28 +24,30 @@
 
 **Lo que SÍ es real y usable en este repositorio:**
 
-- ✅ Sitio estático publicado en GitHub Pages (HTML, CSS, JS vanilla, sin build)
+- ✅ Sitio estático publicado en GitHub Pages
+- ✅ Código funcional en `src/` (entidades, motores, API) — 27 tests passing
 - ✅ Diseño responsive con tema oscuro y tipografía serif + mono
 - ✅ Navegación con resaltado automático por scroll
-- ✅ Arquitectura de carpetas documentada: `docs/`, `data/`, `src/`, `tests/`
+- ✅ Automatización con GitHub Actions (tests + security)
 - ✅ Principios éticos explícitos (`docs/ethics.md`)
 
 **Lo que es narrativa conceptual, no ciencia comprobada:**
 
 - 🎭 La "tercera capa" como capa de interpretación profunda
 - 🎭 El uso de astrología, numerología y quiromancia como lenguajes simbólicos
-- 🎭 La simulación cuántica como metáfora de incertidumbre
+- 🎭 La simulación cuántica como metáfora de incertidumbre (es matemática, no hardware)
 
 ---
 
 ## 📖 ¿Qué es este repositorio?
 
-Dos capas separadas que conviven en el mismo proyecto:
+Tres capas separadas que conviven en el mismo proyecto:
 
 | Capa | Descripción | Estado |
 |------|-------------|--------|
 | **Sitio público** | Landing estática en GitHub Pages | ✅ Publicado |
-| **Arquitectura conceptual** | Cinco capas documentadas | ⚙️ Documentado |
+| **Código funcional** | Motores simbólico, patrones y simulación | ✅ Implementado |
+| **Arquitectura conceptual** | Cinco capas documentadas | 📚 Documentado |
 
 ---
 
@@ -78,24 +55,30 @@ Dos capas separadas que conviven en el mismo proyecto:
 
 ### Ver el sitio
 
-Abre directamente: https://marcorojas17.github.io/PROYECTO-KRONOS/
+https://marcorojas17.github.io/PROYECTO-KRONOS/
 
-### Clonar el repositorio
+### Clonar y ejecutar tests
 
 ```bash
 git clone https://github.com/marcorojas17/PROYECTO-KRONOS.git
 cd PROYECTO-KRONOS
+npm test
 ```
 
-### Publicar cambios
+### Usar la API en tu código
 
-```bash
-git add .
-git commit -m "actualización: sección X"
-git push origin main
+```javascript
+import { Cronos } from './src/api/index.js';
+
+const result = Cronos.symbolic.interpretDate('2026-09-15');
+console.log(result.reduction.value); // 7
+
+const patterns = Cronos.pattern.detectRepetitions([1, 2, 2, 3, 3, 3]);
+console.log(patterns.repeated); // { 2: 2, 3: 3 }
+
+const sim = Cronos.simulator.simulateCoin(1000);
+console.log(sim.probabilityHeads); // ~0.5
 ```
-
-GitHub Pages reconstruye el sitio en 1–2 minutos.
 
 ---
 
@@ -107,17 +90,36 @@ PROYECTO-KRONOS/
 ├── styles.css                    ← tema oscuro
 ├── app.js                        ← interacciones vanilla
 ├── 404.html                      ← página de error
+├── favicon.svg                   ← icono vectorial
+├── manifest.webmanifest          ← app instalable
+├── robots.txt                    ← SEO
+├── sitemap.xml                   ← SEO
+├── package.json                  ← scripts npm
 ├── .nojekyll                     ← evita procesado Jekyll
-├── README.md                     ← este archivo
-├── LICENSE                       ← MIT
-├── CONTRIBUTING.md               ← guía de contribución
-├── CHANGELOG.md                  ← historial de versiones
+├── README.md, LICENSE, CHANGELOG.md
+├── CONTRIBUTING.md, SECURITY.md
 │
-├── docs/                         ← documentación fundacional
-├── data/                         ← esquemas y corpus simbólico
-├── src/                          ← motores (por construir)
-├── tests/                        ← pruebas
-└── .github/                      ← workflows
+├── docs/                         ← 6 documentos fundacionales
+├── data/                         ← esquemas + corpus simbólico
+│
+├── src/
+│   ├── core/
+│   │   ├── entities/
+│   │   │   ├── number.js         ← entidad número
+│   │   │   └── date.js           ← entidad fecha
+│   │   └── rules/
+│   │       └── reduction.js      ← reglas de reducción
+│   ├── symbolic_engine/          ← interpretación cultural
+│   ├── pattern_engine/           ← detección de patrones
+│   ├── quantum_simulator/        ← simulación matemática
+│   └── api/                      ← punto de entrada
+│
+├── tests/
+│   ├── unit/                     ← 12 tests
+│   ├── integration/              ← 7 tests
+│   └── security/                 ← 8 tests
+│
+└── .github/                      ← workflows + templates
 ```
 
 ---
@@ -127,8 +129,8 @@ PROYECTO-KRONOS/
 | Capa | Función | Estado |
 |------|---------|--------|
 | Simbólica | Interpretación cultural | 📖 Documentada |
-| Lógica | Símbolos → datos estructurados | 📐 Diseño |
-| Computacional | Algoritmos, IA, simulación | ⚙️ Por construir |
+| Lógica | Símbolos → datos estructurados | ✅ Implementada |
+| Computacional | Algoritmos, patrones, simulación | ✅ Implementada |
 | Tiempo | Eventos, ciclos, versiones | 🕰️ Por construir |
 | Interfaz | Web o app | 🎨 Publicada |
 
@@ -169,7 +171,7 @@ Lee [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de enviar un Pull Request.
 
 <div align="center">
 
-**CRONOS · v1.0 · 2026-09-15**
+**CRONOS · v1.1 · 2026-09-15**
 Arquitectura filosófica. No predice el futuro.
 
 </div>
