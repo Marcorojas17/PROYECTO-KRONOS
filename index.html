@@ -6,22 +6,20 @@
   <title>CRONOS — Sistema de Interpretación Temporal y Simbólica</title>
   <meta name="description" content="Arquitectura filosófica y tecnológica que estudia cómo los símbolos, los patrones y el tiempo se convierten en decisiones humanas." />
 
-  <!-- Favicon SVG -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a0a0f'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='62' font-weight='700' fill='%23c9a44c' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CRONOS — Sistema de Interpretación Temporal y Simbólica" />
   <meta property="og:description" content="Arquitectura filosófica y tecnológica sobre símbolos, patrones y tiempo." />
   <meta property="og:url" content="https://marcorojas17.github.io/PROYECTO-KRONOS/" />
   <meta property="og:site_name" content="CRONOS" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CRONOS — Sistema de Interpretación Temporal y Simbólica" />
   <meta name="twitter:description" content="Arquitectura filosófica y tecnológica sobre símbolos, patrones y tiempo." />
 
-  <!-- Tema móvil -->
   <meta name="theme-color" content="#0a0a0f" />
 
   <link rel="stylesheet" href="styles.css" />
@@ -41,6 +39,7 @@
       <a href="#repositorio">Repositorio</a>
       <a href="#modulos">Módulos</a>
       <a href="#etica">Ética</a>
+      <a href="#laboratorio">Laboratorio</a>
       <a href="#glosario">Glosario</a>
       <a href="#legal">Legal</a>
     </nav>
@@ -59,7 +58,7 @@
         cómo la información cambia con el tiempo.
       </p>
       <div class="hero__cta">
-        <a href="#arquitectura" class="btn btn--primary">Explorar arquitectura</a>
+        <a href="#laboratorio" class="btn btn--primary">Probar el laboratorio</a>
         <a href="#etica" class="btn btn--ghost">Leer principios éticos</a>
       </div>
     </div>
@@ -189,53 +188,43 @@
     </div>
 
     <pre class="tree"><code>cronos/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-├── .env.example
-├── .gitignore
+├── index.html, styles.css, app.js
+├── favicon.svg, manifest.webmanifest
+├── robots.txt, sitemap.xml
+├── package.json
+├── README.md, LICENSE, CHANGELOG.md
+├── CONTRIBUTING.md, SECURITY.md
 │
 ├── docs/
-│   ├── vision.md
-│   ├── architecture.md
-│   ├── glossary.md
-│   ├── ethics.md
+│   ├── vision.md, architecture.md
+│   ├── glossary.md, ethics.md
 │   └── third-layer-internet.md
 │
 ├── data/
 │   ├── schemas/
-│   ├── symbolic/
-│   │   ├── astrology/
-│   │   ├── numerology/
-│   │   ├── palmistry/
-│   │   └── texts/
-│   └── examples/
+│   └── symbolic/
+│       ├── astrology/
+│       ├── numerology/
+│       ├── palmistry/
+│       └── texts/
 │
 ├── src/
 │   ├── core/
-│   │   ├── entities/
-│   │   ├── rules/
-│   │   └── timelines/
+│   │   ├── entities/{number,date}.js
+│   │   └── rules/reduction.js
 │   ├── symbolic_engine/
 │   ├── pattern_engine/
 │   ├── quantum_simulator/
-│   ├── api/
-│   └── interface/
+│   └── api/
 │
 ├── tests/
 │   ├── unit/
 │   ├── integration/
 │   └── security/
 │
-├── scripts/
-├── notebooks/
-├── config/
-├── docker/
 └── .github/
-    └── workflows/
-        ├── tests.yml
-        └── security.yml</code></pre>
+    ├── workflows/{tests,security}.yml
+    └── ISSUE_TEMPLATE/</code></pre>
   </section>
 
   <!-- MÓDULOS -->
@@ -259,24 +248,24 @@
         <p>Prueba probabilidades mediante simulación matemática. No es hardware cuántico real.</p>
       </article>
       <article class="module">
-        <code>timelines</code>
-        <p>Organiza ciclos, fechas y acontecimientos dentro de una línea temporal.</p>
+        <code>core/entities</code>
+        <p>Entidades base: fecha y número. Validación estricta de entrada.</p>
+      </article>
+      <article class="module">
+        <code>core/rules</code>
+        <p>Reglas de reducción teosófica para fechas y textos.</p>
       </article>
       <article class="module">
         <code>api</code>
-        <p>Conecta el motor con una aplicación externa mediante endpoints definidos.</p>
-      </article>
-      <article class="module">
-        <code>interface</code>
-        <p>Muestra los resultados: mapas, gráficos, explicaciones.</p>
+        <p>Punto de entrada unificado. Exporta `Cronos` con los tres motores.</p>
       </article>
       <article class="module">
         <code>tests</code>
-        <p>Evita errores y comportamientos inesperados en cada capa.</p>
+        <p>27 tests en unit, integration y security. Runner nativo `node:test`.</p>
       </article>
       <article class="module">
         <code>ethics.md</code>
-        <p>Aclara que el sistema no predice el futuro ni sustituye decisiones médicas, legales o financieras.</p>
+        <p>Aclara que el sistema no predice el futuro ni sustituye decisiones profesionales.</p>
       </article>
     </div>
   </section>
@@ -308,10 +297,53 @@
     </div>
   </section>
 
-  <!-- GLOSARIO -->
-  <section id="glosario" class="section">
+  <!-- LABORATORIO -->
+  <section id="laboratorio" class="section">
     <div class="section__head">
-      <span class="section__kicker">07 — Glosario</span>
+      <span class="section__kicker">07 — Laboratorio</span>
+      <h2>Interpreta una fecha o un texto</h2>
+      <p class="section__lead">
+        Usa el motor simbólico del proyecto directamente en tu navegador.
+        Todo se ejecuta <em>localmente</em>. Nada se envía a un servidor.
+      </p>
+    </div>
+
+    <div class="lab">
+      <form class="lab__form" id="lab-form" autocomplete="off">
+        <div class="lab__field">
+          <label for="lab-date">Fecha</label>
+          <input type="date" id="lab-date" name="date" value="2026-09-15" required />
+          <small>Formato YYYY-MM-DD · calendario gregoriano</small>
+        </div>
+
+        <div class="lab__field">
+          <label for="lab-text">Texto <span class="lab__optional">(opcional)</span></label>
+          <input type="text" id="lab-text" name="text" placeholder="Ej. Cronos" maxlength="60" />
+          <small>Solo letras latinas · máximo 60 caracteres</small>
+        </div>
+
+        <div class="lab__actions">
+          <button type="submit" class="btn btn--primary">Interpretar</button>
+          <button type="reset" class="btn btn--ghost">Limpiar</button>
+        </div>
+      </form>
+
+      <div class="lab__output" id="lab-output" aria-live="polite">
+        <p class="lab__placeholder">Los resultados aparecerán aquí.</p>
+      </div>
+
+      <div class="notice">
+        <strong>Ejecución local:</strong> el motor <code>Cronos.symbolic</code> corre íntegramente
+        en tu navegador con ES Modules nativos. No hay llamadas a servidores externos,
+        no se almacena nada, no se rastrea nada.
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section id="glosario" class="section section--alt">
+    <div class="section__head">
+      <span class="section__kicker">08 — Glosario</span>
       <h2>Términos del sistema</h2>
       <p class="section__lead">
         Vocabulario mínimo para leer el proyecto sin ambigüedades.
@@ -361,13 +393,11 @@
   </section>
 
   <!-- LEGAL -->
-  <section id="legal" class="section section--alt">
+  <section id="legal" class="section">
     <div class="section__head">
-      <span class="section__kicker">08 — Aviso legal</span>
+      <span class="section__kicker">09 — Aviso legal</span>
       <h2>Lo que este proyecto no hace</h2>
-      <p class="section__lead">
-        Antes de usar cualquier interpretación, lee esto.
-      </p>
+      <p class="section__lead">Antes de usar cualquier interpretación, lee esto.</p>
     </div>
 
     <div class="legal-grid">
@@ -425,9 +455,9 @@
       <span>·</span>
       <a href="#vision">Visión</a>
       <span>·</span>
-      <a href="#etica">Ética</a>
+      <a href="#laboratorio">Laboratorio</a>
       <span>·</span>
-      <a href="#glosario">Glosario</a>
+      <a href="#etica">Ética</a>
       <span>·</span>
       <a href="#legal">Legal</a>
     </div>
@@ -435,6 +465,6 @@
     <p class="footer__copy">© <span id="year"></span> Marco Rojas — Licencia MIT</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
