@@ -46,7 +46,32 @@
     layerObserver.observe(el);
   });
 
-  // --- Año dinámico en consola (marca de tiempo) ---
+  // --- Aparición progresiva de tarjetas legales ---
+  const legalCards = document.querySelectorAll('.legal-card, .glossary dt, .glossary dd');
+  const cardObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  legalCards.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = `opacity 0.5s ease ${i * 0.04}s, transform 0.5s ease ${i * 0.04}s`;
+    cardObserver.observe(el);
+  });
+
+  // --- Año dinámico en el footer ---
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // --- Marca de tiempo en consola ---
   console.log(
     '%cCRONOS%c — Sistema de Interpretación Temporal y Simbólica\n' +
     'Arquitectura filosófica y tecnológica. No predice el futuro.',
