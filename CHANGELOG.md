@@ -8,72 +8,60 @@ Versionado según [SemVer 2.0.0](https://semver.org/lang/es/).
 ## [Unreleased]
 
 ### Planeado
-- Poblar `data/symbolic/` con corpus JSON real.
-- Página interactiva en el sitio que use `Cronos.symbolic.interpretDate()`.
-- Implementar `src/core/timelines/` para líneas temporales.
 - Implementar `src/interface/` como módulos ES independientes.
+- Editor visual de líneas temporales en el sitio.
+
+---
+
+## [1.2.0] — 2026-09-15
+
+### Añadido
+- **Capa IV de tiempo** en `src/core/timelines/index.js`:
+  - Clase `Event` con validación estricta (id, iso, label, tags, meta).
+  - Clase `Timeline` con métodos `add`, `remove`, `get`, `sorted`, `byTag`, `range`.
+  - Serialización `toJSON` / `fromJSON` para ambas clases.
+- **17 tests nuevos** en `tests/unit/timeline.test.js`.
+- **Sección `#tiempo`** en el sitio: visualizador de línea temporal con filtro por etiqueta.
+- **Exportación** `Cronos.timeline.{Event, Timeline}` en la API.
+
+### Cambiado
+- `src/README.md` — refleja los 40 tests y la capa de tiempo.
+- `tests/README.md` — actualizado a 40 tests.
+- `src/api/index.js` — versión `1.2.0`, exporta timelines.
+- Sitio: nueva sección `#tiempo` entre `#laboratorio` y `#glosario`.
 
 ---
 
 ## [1.1.0] — 2026-09-15
 
 ### Añadido
-- **Núcleo implementado** en `src/core/`:
-  - `entities/number.js` — entidad Número + reducción teosófica.
-  - `entities/date.js` — entidad Fecha con validación ISO 8601.
-  - `rules/reduction.js` — reglas de reducción de fechas y textos.
-- **Tres motores funcionales**:
-  - `symbolic_engine/index.js` — interpretación cultural de fechas y textos.
-  - `pattern_engine/index.js` — detección de frecuencias y repeticiones.
-  - `quantum_simulator/index.js` — simulación probabilística (Monte Carlo).
-- **API unificada** en `src/api/index.js`.
-- **Tests con `node:test`** (sin dependencias externas):
-  - `tests/unit/number.test.js` — 6 tests.
-  - `tests/unit/reduction.test.js` — 6 tests.
-  - `tests/integration/flow.test.js` — 7 tests.
-  - `tests/security/input.test.js` — 8 tests.
-- **`package.json`** con scripts `npm test`, `test:unit`, `test:integration`, `test:security`.
+- Núcleo implementado: `entities/number.js`, `entities/date.js`, `rules/reduction.js`.
+- Tres motores: `symbolic_engine/`, `pattern_engine/`, `quantum_simulator/`.
+- API unificada en `src/api/index.js`.
+- 27 tests en `tests/unit/`, `tests/integration/`, `tests/security/`.
+- `package.json` con scripts npm.
+- Corpus simbólico poblado en `data/symbolic/` (12 signos, 9 números, 4 líneas, 6 salmos).
+- Sección `#laboratorio` en el sitio: interpretación en tiempo real usando el motor real.
 
 ### Cambiado
-- `.github/workflows/tests.yml` ahora valida todos los módulos `src/` y ejecuta los tests.
-- `src/README.md` actualizado: de "fase de diseño" a "implementado".
-- `tests/README.md` actualizado: de "pendiente" a "activo" (27 tests).
+- `.github/workflows/tests.yml` ahora valida todos los módulos `src/` y ejecuta `npm test`.
+- `README.md` promueve v1.1 con sección de API.
 
 ---
 
 ## [1.0.0] — 2026-09-15
 
 ### Añadido
-- **Sitio principal** (`index.html`) con ocho secciones: Hero, Visión, Arquitectura, Tercera capa, Repertorio, Módulos, Ética, Glosario y Legal.
-- **Tema visual** (`styles.css`): fondo oscuro, acentos dorado (#c9a44c) y violeta (#6a5acd), tipografía serif + mono.
-- **Interacciones vanilla** (`app.js`): resaltado por scroll, aparición progresiva de capas y tarjetas, año dinámico.
-- **Página de error** (`404.html`) tematizada.
-- **Presentación**:
-  - `favicon.svg` — icono vectorial con la letra C dorada.
-  - `manifest.webmanifest` — permite instalar el sitio como app.
-- **SEO**:
-  - `robots.txt` — instrucciones para buscadores.
-  - `sitemap.xml` — mapa del sitio.
-- **Documentación**:
-  - `README.md`, `LICENSE`, `CONTRIBUTING.md`, `CHANGELOG.md`, `SECURITY.md`.
-  - `docs/`: visión, arquitectura, glosario, ética, tercera capa.
-  - `data/`: esquemas, corpus simbólico (astrología, numerología, quiromancia, textos).
-  - `src/`, `tests/`, `.github/`: READMEs con estilo unificado.
-- **Automatización**:
-  - `.github/workflows/tests.yml` — valida HTML, CSS y JS.
-  - `.github/workflows/security.yml` — CodeQL + enlaces externos.
-- **Plantillas de contribución**:
-  - `.github/PULL_REQUEST_TEMPLATE.md`.
-  - `.github/ISSUE_TEMPLATE/bug_report.md`, `feature_request.md`, `config.yml`.
-- **Seguridad activada** en GitHub:
-  - Private vulnerability reporting.
-  - Dependabot alerts.
-  - CodeQL analysis.
-  - Push protection.
-
-### Notas
-- Sitio publicado en: https://marcorojas17.github.io/PROYECTO-KRONOS/
-- No requiere build, Docker ni terminal para publicarse.
+- Sitio principal con 8 secciones: Hero, Visión, Arquitectura, Tercera capa, Repertorio, Módulos, Ética, Glosario, Legal.
+- Tema visual oscuro con acentos dorado `#c9a44c` y violeta `#6a5acd`.
+- Interacciones vanilla: resaltado por scroll, aparición progresiva, año dinámico.
+- Página de error 404 tematizada.
+- `favicon.svg`, `manifest.webmanifest`, `robots.txt`, `sitemap.xml`.
+- Documentación completa: `README.md`, `LICENSE`, `CONTRIBUTING.md`, `CHANGELOG.md`, `SECURITY.md`.
+- Carpetas `docs/`, `data/`, `src/`, `tests/`, `.github/` con READMEs.
+- Workflows `tests.yml` y `security.yml`.
+- Plantillas de Issues (`bug_report`, `feature_request`) y de Pull Request.
+- Seguridad GitHub: Private vulnerability reporting, Dependabot alerts, CodeQL, Push protection.
 
 ---
 
