@@ -131,3 +131,19 @@ PROYECTO-KRONOS/
 ║   ✓  Seguridad activada (push protection + CodeQL)                       ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║   ►  Input: fecha (YYYY-MM-DD)                                           ║
+║   ►  Input: texto (opcional, solo letras latinas)                        ║
+║   ►  Botón: Interpretar                                                  ║
+║                                                                          ║
+║   Resultado:                                                             ║
+║     · Entidad Fecha (año, mes, día, día de semana, día del año)          ║
+║     · Reducción teosófica (1-9)                                          ║
+║     · Reducción del texto (si se introdujo)                              ║
+║     · Disclaimer explícito: no predice                                   ║
+║                                                                          ║
+║   Ejecución: 100% cliente. Sin servidor. Sin llamadas externas.          ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
