@@ -1,5 +1,5 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- CRONOS · Capa computacional · v1.1                                     -->
+<!-- CRONOS · Capa computacional · v1.2                                     -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -16,8 +16,8 @@
 ║ ▓    ╚══════╝╚═╝  ╚═╝ ╚═════╝                                            ▓ ║
 ║ ▓                                                                          ▓ ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
-║ ▓   N Ú C L E O   ·   M O T O R E S   ·   A P I   ·   I N T E R F A Z      ║
-║ ▓   v 1 . 1   ·   I M P L E M E N T A D O                                  ║
+║ ▓   N Ú C L E O   ·   M O T O R E S   ·   A P I   ·   T I E M P O           ║
+║ ▓   v 1 . 2   ·   I M P L E M E N T A D O                                  ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
 ║ ▓                                                                          ▓ ║
 ║ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ║
@@ -37,10 +37,10 @@
 ```text
 ╔══════════════════════════════════════════════════════════════════════════╗
 ║                                                                          ║
-║   ►  Núcleo implementado (entidades + reglas)                            ║
-║   ►  Tres motores funcionales (simbólico, patrones, simulación)          ║
+║   ►  Núcleo implementado (entidades + reglas + timelines)                ║
+║   ►  Cuatro motores funcionales                                          ║
 ║   ►  API unificada exportada desde src/api/index.js                      ║
-║   ►  Tests unitarios, de integración y de seguridad                      ║
+║   ►  40 tests passing (unit + integration + security)                    ║
 ║   ►  Sin dependencias externas (solo Node 18+ nativo)                    ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
@@ -55,11 +55,11 @@
 | `core/entities/number` | `core/entities/number.js` | Entidad número + reducción teosófica | ✅ |
 | `core/entities/date` | `core/entities/date.js` | Entidad fecha (ISO 8601, validada) | ✅ |
 | `core/rules/reduction` | `core/rules/reduction.js` | Reducción de fechas y textos | ✅ |
+| `core/timelines` | `core/timelines/index.js` | Clases `Event` y `Timeline` | ✅ |
 | `symbolic_engine` | `symbolic_engine/index.js` | Interpretación cultural de fechas/textos | ✅ |
 | `pattern_engine` | `pattern_engine/index.js` | Detección de frecuencias y repeticiones | ✅ |
 | `quantum_simulator` | `quantum_simulator/index.js` | Simulación probabilística (Monte Carlo) | ✅ |
 | `api` | `api/index.js` | Punto de entrada unificado | ✅ |
-| `interface` | (integrada en `index.html`) | Visualización estática | ✅ |
 
 ---
 
@@ -70,17 +70,26 @@
 ```javascript
 import { Cronos } from './src/api/index.js';
 
-// Interpretación simbólica de una fecha
-const result = Cronos.symbolic.interpretDate('2026-09-15');
-console.log(result.reduction.value); // 7
+// Interpretación simbólica
+const fecha = Cronos.symbolic.interpretDate('2026-09-15');
+console.log(fecha.reduction.value); // 7
 
-// Detección de patrones
-const patterns = Cronos.pattern.detectRepetitions([1, 2, 2, 3, 3, 3]);
-console.log(patterns.repeated); // { 2: 2, 3: 3 }
+// Patrones
+const patrones = Cronos.pattern.detectRepetitions([1, 2, 2, 3, 3, 3]);
+console.log(patrones.repeated); // { 2: 2, 3: 3 }
 
-// Simulación probabilística
+// Simulación
 const sim = Cronos.simulator.simulateCoin(1000);
 console.log(sim.probabilityHeads); // ~0.5
+
+// Línea temporal
+const tl = new Cronos.timeline.Timeline('Historia del proyecto');
+tl.add({ id: 'a', iso: '2026-01-01', label: 'concepción', tags: ['origen'] });
+tl.add({ id: 'b', iso: '2026-09-15', label: 'publicación', tags: ['release'] });
+console.log(tl.sorted().map(e => e.label));
+// ['concepción', 'publicación']
+
+console.log(tl.byTag('release')); // [{ ...evento b }]
 ```
 
 ### Desde el navegador
@@ -88,7 +97,10 @@ console.log(sim.probabilityHeads); // ~0.5
 ```html
 <script type="module">
   import { Cronos } from './src/api/index.js';
-  console.log(Cronos.meta.version);
+
+  const tl = new Cronos.timeline.Timeline('demo');
+  tl.add({ id: 'x', iso: '2026-01-01', label: 'inicio' });
+  console.log(tl.size); // 1
 </script>
 ```
 
@@ -103,7 +115,7 @@ npm run test:integration # Solo integración
 npm run test:security    # Solo seguridad
 ```
 
-Ejecuta los tests con el runner nativo `node:test` (Node 18+). **Sin dependencias externas.**
+Runner nativo `node:test` (Node 18+). **Sin dependencias externas.**
 
 ---
 
@@ -117,22 +129,7 @@ Ejecuta los tests con el runner nativo `node:test` (Node 18+). **Sin dependencia
 ║   03  Funciones puras cuando sea posible.                                ║
 ║   04  Validación estricta de entrada.                                    ║
 ║   05  Ética programática: ningún módulo predice.                         ║
-║   06  Nada de "predict()", "forecast()" ni "destiny()".                  ║
-║                                                                          ║
-╚══════════════════════════════════════════════════════════════════════════╝
-```
-
----
-
-## 🚫 Qué NO contiene `src/`
-
-```text
-╔══════════════════════════════════════════════════════════════════════════╗
-║                                                                          ║
-║   ✗  Predicciones del futuro                                             ║
-║   ✗  Diagnósticos médicos, legales o financieros                         ║
-║   ✗  Código que afirme capacidades cuánticas reales                      ║
-║   ✗  Dependencias externas                                               ║
+║   06  La capa de tiempo ordena cronología, no causalidad.                ║
 ║                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 ```
@@ -144,8 +141,8 @@ Ejecuta los tests con el runner nativo `node:test` (Node 18+). **Sin dependencia
 ```text
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║   SRC · CRONOS · v1.1 · 2026-09-15                                           ║
-║   Código implementado · Tests activos · Sin dependencias                     ║
+║   SRC · CRONOS · v1.2 · 2026-09-15                                           ║
+║   Cinco capas implementadas · Sin dependencias · 40 tests                    ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
