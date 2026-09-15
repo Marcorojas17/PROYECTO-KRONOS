@@ -47,12 +47,21 @@ export function CasosRegistrados() {
               </div>
               <div>
                 <dt className="text-zinc-500">Timestamp</dt>
-                <dd className="text-zinc-950">{caso.timestamp}</dd>
+                <dd className="text-zinc-950">
+                  {caso.timestamp}
+                  {caso.timezone ? ` (${caso.timezone})` : ''}
+                </dd>
               </div>
               <div>
                 <dt className="text-zinc-500">Tipo</dt>
                 <dd className="text-zinc-950">{caso.tipo}</dd>
               </div>
+              {caso.fuente && (
+                <div>
+                  <dt className="text-zinc-500">Fuente</dt>
+                  <dd className="text-zinc-950">{caso.fuente}</dd>
+                </div>
+              )}
             </dl>
           </article>
         ))}
