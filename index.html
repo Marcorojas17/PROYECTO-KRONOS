@@ -40,6 +40,7 @@
       <a href="#modulos">Módulos</a>
       <a href="#etica">Ética</a>
       <a href="#laboratorio">Laboratorio</a>
+      <a href="#tiempo">Tiempo</a>
       <a href="#glosario">Glosario</a>
       <a href="#legal">Legal</a>
     </nav>
@@ -211,7 +212,8 @@
 ├── src/
 │   ├── core/
 │   │   ├── entities/{number,date}.js
-│   │   └── rules/reduction.js
+│   │   ├── rules/reduction.js
+│   │   └── timelines/index.js
 │   ├── symbolic_engine/
 │   ├── pattern_engine/
 │   ├── quantum_simulator/
@@ -256,16 +258,16 @@
         <p>Reglas de reducción teosófica para fechas y textos.</p>
       </article>
       <article class="module">
+        <code>core/timelines</code>
+        <p>Clases Event y Timeline. Ordena cronología sin juzgar causalidad.</p>
+      </article>
+      <article class="module">
         <code>api</code>
-        <p>Punto de entrada unificado. Exporta `Cronos` con los tres motores.</p>
+        <p>Punto de entrada unificado. Exporta `Cronos` con los cuatro motores.</p>
       </article>
       <article class="module">
         <code>tests</code>
-        <p>27 tests en unit, integration y security. Runner nativo `node:test`.</p>
-      </article>
-      <article class="module">
-        <code>ethics.md</code>
-        <p>Aclara que el sistema no predice el futuro ni sustituye decisiones profesionales.</p>
+        <p>40 tests en unit, integration y security. Runner nativo `node:test`.</p>
       </article>
     </div>
   </section>
@@ -340,10 +342,42 @@
     </div>
   </section>
 
-  <!-- GLOSARIO -->
-  <section id="glosario" class="section section--alt">
+  <!-- TIEMPO -->
+  <section id="tiempo" class="section section--alt">
     <div class="section__head">
-      <span class="section__kicker">08 — Glosario</span>
+      <span class="section__kicker">08 — Tiempo</span>
+      <h2>Línea temporal del proyecto</h2>
+      <p class="section__lead">
+        Capa IV en acción. Cada evento tiene fecha, etiqueta y categoría.
+        Filtra por tipo para explorar la cronología.
+      </p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__filters" id="tl-filters">
+        <button class="timeline__filter is-active" data-tag="*">Todos</button>
+        <button class="timeline__filter" data-tag="fundacional">Fundacional</button>
+        <button class="timeline__filter" data-tag="código">Código</button>
+        <button class="timeline__filter" data-tag="sitio">Sitio</button>
+        <button class="timeline__filter" data-tag="seguridad">Seguridad</button>
+      </div>
+
+      <div class="timeline__track" id="tl-track">
+        <!-- Los eventos se inyectan desde app.js -->
+      </div>
+
+      <div class="notice">
+        <strong>Nota:</strong> esta línea temporal documenta la evolución del repositorio.
+        Se renderiza usando la clase <code>Timeline</code> de <code>src/core/timelines/</code>
+        directamente en tu navegador.
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section id="glosario" class="section">
+    <div class="section__head">
+      <span class="section__kicker">09 — Glosario</span>
       <h2>Términos del sistema</h2>
       <p class="section__lead">
         Vocabulario mínimo para leer el proyecto sin ambigüedades.
@@ -393,9 +427,9 @@
   </section>
 
   <!-- LEGAL -->
-  <section id="legal" class="section">
+  <section id="legal" class="section section--alt">
     <div class="section__head">
-      <span class="section__kicker">09 — Aviso legal</span>
+      <span class="section__kicker">10 — Aviso legal</span>
       <h2>Lo que este proyecto no hace</h2>
       <p class="section__lead">Antes de usar cualquier interpretación, lee esto.</p>
     </div>
@@ -456,6 +490,8 @@
       <a href="#vision">Visión</a>
       <span>·</span>
       <a href="#laboratorio">Laboratorio</a>
+      <span>·</span>
+      <a href="#tiempo">Tiempo</a>
       <span>·</span>
       <a href="#etica">Ética</a>
       <span>·</span>
