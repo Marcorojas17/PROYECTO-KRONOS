@@ -20,6 +20,6 @@ export const casosRegistrados: CasoRegistrado[] = [
     tipo: 'marca temporal estructurada',
     verificable: true,
     fuente: 'Marco Valdovinos',
-    timezone: 'America/Mexico_City' // confírmalo si aplica
-  }
+    timezone: 'America/Mexico_City',
+  },
 ];
