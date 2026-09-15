@@ -1,5 +1,5 @@
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
-<!-- CRONOS · Pruebas · v1.1                                                -->
+<!-- CRONOS · Pruebas · v1.2                                                -->
 <!-- ═══════════════════════════════════════════════════════════════════════ -->
 
 <div align="center">
@@ -17,7 +17,7 @@
 ║ ▓                                                                          ▓ ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
 ║ ▓   U N I T A R I A S   ·   I N T E G R A C I Ó N   ·   S E G U R I D A D  ║
-║ ▓   v 1 . 1   ·   A C T I V O   ·   3 5   T E S T S                         ║
+║ ▓   v 1 . 2   ·   A C T I V O   ·   4 0   T E S T S                         ║
 ║ ▓   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   ▓ ║
 ║ ▓                                                                          ▓ ║
 ║ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ║
@@ -39,7 +39,8 @@ tests/
 ├── README.md                    ← este archivo
 ├── unit/
 │   ├── number.test.js           ← entidad Número + reduceToDigit
-│   └── reduction.test.js        ← reduceDate + reduceText
+│   ├── reduction.test.js        ← reduceDate + reduceText
+│   └── timeline.test.js         ← Event + Timeline
 ├── integration/
 │   └── flow.test.js             ← API + flujo entre motores
 └── security/
@@ -57,57 +58,30 @@ npm run test:integration    # Solo integración
 npm run test:security       # Solo seguridad
 ```
 
-**Sin dependencias externas.** Usa el runner nativo `node:test` (Node 18+).
+Runner nativo `node:test` (Node 18+). **Sin dependencias externas.**
+
+---
+
+## 📊 Cobertura
+
+| Carpeta | Archivos | Tests | Estado |
+|---------|:--------:|:-----:|--------|
+| `unit/` | 3 | 25 | ✅ |
+| `integration/` | 1 | 7 | ✅ |
+| `security/` | 1 | 8 | ✅ |
+| **Total** | **5** | **40** | ✅ |
 
 ---
 
 ## 🎯 Qué se prueba
 
-```text
-╔══════════════════════════════════════════════════════════════════════════╗
-║                                                                          ║
-║   ✓  Corrección lógica                                                   ║
-║      → Transformación simbólico → dato produce resultado esperado        ║
-║                                                                          ║
-║   ✓  Determinismo                                                        ║
-║      → Misma entrada produce misma salida                                ║
-║                                                                          ║
-║   ✓  Límites                                                             ║
-║      → Entradas vacías, malformadas o fuera de rango                     ║
-║                                                                          ║
-║   ✓  Integración                                                         ║
-║      → Los tres motores funcionan en conjunto desde la API               ║
-║                                                                          ║
-║   ✓  Seguridad                                                           ║
-║      → Inyección, tipos incorrectos, strings extremos                    ║
-║                                                                          ║
-║   ✓  Ética programática                                                  ║
-║      → Ningún módulo devuelve una "predicción" disfrazada                ║
-║                                                                          ║
-╚══════════════════════════════════════════════════════════════════════════╝
-```
-
----
-
-## 📊 Cobertura por carpeta
-
-| Carpeta | Archivos | Tests | Estado |
-|---------|:--------:|:-----:|--------|
-| `unit/` | 2 | 12 | ✅ |
-| `integration/` | 1 | 7 | ✅ |
-| `security/` | 1 | 8 | ✅ |
-| **Total** | **4** | **27** | ✅ |
-
----
-
-## 🚦 Estado
-
-```text
-┌──────────────────────────────────────────────────────────────────┐
-│  Tests activos.                                                  │
-│  Ejecutados en cada push y PR vía .github/workflows/tests.yml    │
-└──────────────────────────────────────────────────────────────────┘
-```
+- **Corrección lógica** — transformaciones símbolo → dato
+- **Determinismo** — misma entrada → misma salida
+- **Límites** — entradas vacías, malformadas o fuera de rango
+- **Integración** — motores funcionando en conjunto
+- **Seguridad** — inyección, tipos incorrectos, strings extremos
+- **Tiempo** — orden cronológico, filtros, serialización round-trip
+- **Ética programática** — sin predicciones disfrazadas
 
 ---
 
@@ -116,7 +90,7 @@ npm run test:security       # Solo seguridad
 ```text
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║   TESTS · CRONOS · v1.1 · 2026-09-15                                         ║
+║   TESTS · CRONOS · v1.2 · 2026-09-15                                         ║
 ║   Sin pruebas no hay confianza                                               ║
 ║                                                                              ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
