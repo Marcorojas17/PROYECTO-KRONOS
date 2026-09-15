@@ -11,6 +11,7 @@
 import { interpretDate, interpretText } from '../symbolic_engine/index.js';
 import { detectRepetitions, mode } from '../pattern_engine/index.js';
 import { simulateCoin, simulateUniform } from '../quantum_simulator/index.js';
+import { Event, Timeline } from '../core/timelines/index.js';
 
 export const Cronos = {
   symbolic: {
@@ -25,9 +26,13 @@ export const Cronos = {
     simulateCoin,
     simulateUniform
   },
+  timeline: {
+    Event,
+    Timeline
+  },
   meta: {
     name: 'CRONOS',
-    version: '1.0.0',
+    version: '1.2.0',
     description: 'Sistema de Interpretación Temporal y Simbólica',
     disclaimer: 'No predice el futuro. Arquitectura conceptual.'
   }
