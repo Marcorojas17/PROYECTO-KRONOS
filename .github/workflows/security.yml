@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Clonar repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Inicializar CodeQL
         uses: github/codeql-action/init@v3
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - name: Clonar repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Buscar dependencias externas
         run: |
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: Clonar repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Verificar enlaces del README y del sitio
         run: |
